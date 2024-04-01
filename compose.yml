@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  api:
+    image: golang:1.22.1-alpine3.19
+    container_name: api
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: go run main.go
+    depends_on:
+      - db
+  db:
+    image: mariadb:11.4.1-rc-jammy
+    container_name: db
+    ports:
+      - "3306:3306"
