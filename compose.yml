@@ -16,3 +16,13 @@ services:
     container_name: db
     ports:
       - "3306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_USER: db-user
+      MARIADB_PASSWORD: db-pass
+      MARIADB_DATABASE: db_clean42
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/cnf:/etc/mysql/conf.d
+      - ./db/sql:/docker-entrypoint-initdb.d

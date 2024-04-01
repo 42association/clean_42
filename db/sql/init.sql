@@ -1,0 +1,5 @@
+CREATE TABLE table_clean42 (
+	uid INT DEFAULT 0,
+	place VARCHAR(50) DEFAULT NULL,
+	timestamp TIMESTAMP
+);
