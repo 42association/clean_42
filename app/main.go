@@ -41,12 +41,6 @@ func postDataHandler(c *gin.Context) {
 	defer db.Close()
 	log.Println(postData.UID, postData.Place)
 	insertCleanedData(db, postData)
-	// _, err = db.Exec("INSERT INTO table_cleaner (uid, place) VALUES (?, ?)", postData.UID, postData.Area)
-	// if err != nil {
-	// 	panic(err.Error())
-	// 	return
-	// }
-	// log.Println("send finished")
 }
 
 func handleRequests() {
