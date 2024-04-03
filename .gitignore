@@ -1,0 +1,3 @@
+db/data/*
+app/go.mod
+app/go.sum
